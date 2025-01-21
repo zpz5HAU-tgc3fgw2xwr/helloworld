@@ -1,2 +1,3 @@
 #!/bin/bash
-./src/main.sh
+npm install
+npm run dev

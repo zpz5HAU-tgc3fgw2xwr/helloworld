@@ -1,17 +1,27 @@
-# Use a minimal Linux base image
-FROM alpine:latest
-
-# Install bash for running shell scripts
-RUN apk add --no-cache bash
+# Use a Node.js base image
+FROM node:21-alpine
 
 # Set the working directory inside the container
 WORKDIR /src
 
-# Copy the entire src directory into the container's working directory
-COPY src /src
+# Copy only the files necessary for npm install first (to leverage Docker caching)
+COPY package.json package-lock.json ./
+COPY .nvmrc ./
 
-# Make the main script executable
-RUN chmod +x /src/main.sh
+# Install Node.js version based on .nvmrc
+RUN node -v | grep $(cat .nvmrc) || (npm install -g n && n $(cat .nvmrc))
 
-# Execute the main script when the container starts
-CMD ["bash", "/src/main.sh"]
+# Install dependencies
+RUN npm ci
+
+# Copy the remaining project files
+COPY . .
+
+# Build the application
+RUN npm run build
+
+# Expose the desired port (adjust if necessary)
+EXPOSE 3000
+
+# Start the application from the build
+CMD ["node", "dist/index.js"]

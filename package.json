@@ -1,0 +1,43 @@
+{
+	"author": "Brennen Heinrich",
+	"description": "Minimal Node.js starter template with TypeScript, ESLint, Prettier, Vitest, and GitHub Actions CI/CD.",
+	"homepage": "https://github.com/zpz5HAU-tgc3fgw2xwr/helloworld#readme",
+	"license": "ISC",
+	"main": "eslint.config.js",
+	"name": "hellovue",
+	"type": "module",
+	"version": "0.0.1",
+	"bugs": {
+		"url": "https://github.com/zpz5HAU-tgc3fgw2xwr/helloworld/issues"
+	},
+	"devDependencies": {
+		"@vitejs/plugin-vue": "^5.2.1",
+		"@vitest/coverage-v8": "^3.0.2",
+		"eslint": "^9.18.0",
+		"eslint-plugin-security": "^3.0.1",
+		"prettier": "^3.4.2",
+		"typescript": "~5.6.2",
+		"vite": "^6.0.5",
+		"vitest": "^3.0.2"
+	},
+	"prettier": {
+		"printWidth": 80,
+		"tabWidth": 2,
+		"semi": true,
+		"singleQuote": false,
+		"useTabs": true
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/zpz5HAU-tgc3fgw2xwr/helloworld.git"
+	},
+	"scripts": {
+		"build": "tsc && vite build",
+		"dev": "vite",
+		"format:check": "prettier --check \"src/**/*.{js,ts,json,css,md}\"",
+		"format:write": "prettier --write \"src/**/*.{js,ts,json,css,md}\"",
+		"lint": "eslint . --ext .ts",
+		"preview": "vite preview",
+		"test": "vitest --run"
+	}
+}

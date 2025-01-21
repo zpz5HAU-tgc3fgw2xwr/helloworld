@@ -1,11 +1,11 @@
-# 🌍 Helloworld
+# 🌐 Hellonode
 
-![CI Status](https://github.com/zpz5HAU-tgc3fgw2xwr/helloworld/actions/workflows/ci.yml/badge.svg?branch=main)
-![CD Status](https://github.com/zpz5HAU-tgc3fgw2xwr/helloworld/actions/workflows/cd.yml/badge.svg?branch=main)
+![CI Status](https://github.com/zpz5HAU-tgc3fgw2xwr/helloworld/actions/workflows/ci.yml/badge.svg?branch=hellonode)
+![CD Status](https://github.com/zpz5HAU-tgc3fgw2xwr/helloworld/actions/workflows/cd.yml/badge.svg?branch=hellonode)
 
 ## 🖍 Project Overview
 
-**Helloworld** is a minimalist project template designed to serve as a starting point for creating new applications or scripts. It provides a foundational setup with essential files, CI/CD configurations, and examples that can be extended into more complex tagged branches. This repository emphasizes simplicity, reusability, and clarity, ensuring minimal changes are needed when branching into new projects.
+**Hellonode** is a Node.js-based project template built on the Helloworld framework. It provides a minimalist yet robust starting point with tools like TypeScript, ESLint, Vitest, and Vite pre-configured for efficient development. The structure emphasizes scalability and clarity, ensuring seamless branching and expansion.
 
 ---
 
@@ -15,44 +15,55 @@
 
 1. Build the Docker image:
    ```bash
-   docker build -t helloworld .
+   docker build -t hellonode .
    ```
 2. Run the Docker container:
    ```bash
-   docker run helloworld
+   docker run hellonode
    ```
 
 ### Run Locally
 
-1. Ensure `bash` is installed on your system.
-2. Execute the script:
+1. Ensure Node.js and `npm` are installed on your system.
+2. Install dependencies:
    ```bash
-   bash src/main.sh
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm run dev
    ```
 
 ---
 
 ## 🌟 Features
 
-- **Minimalist Template**: Start small and expand as needed.
-- **Cross-Platform Support**: Works seamlessly in Docker or local bash environments.
-- **Scalable Structure**: Add scripts to the `src/` directory to increase functionality.
+- **Node.js Template**: Includes TypeScript for type safety and Vite for fast builds.
+- **Cross-Platform Support**: Works seamlessly in Docker or local environments.
+- **Scalable Structure**: Organized directories for assets and components.
 - **CI/CD Ready**: Includes [GitHub Actions](https://github.com/features/actions) for automated testing and validation.
+- **Testing with Vitest**: Pre-configured for unit and integration testing.
+- **Code Linting**: ESLint ensures consistent code quality.
 
 ---
 
 ## 🗂️ Directory Structure
 
 ```
-helloworld/
-├── src/                     # Contains all scripts
-│   └── main.sh              # Primary script executed by Docker
+hellonode/
+├── src/                     # Source files
+│   ├── assets/              # Static assets
+│   │   ├── styles/          # Stylesheets
+│   │   ├── svg/             # SVG assets
+│   ├── components/          # Reusable components
 ├── .github/                 # CI/CD configurations
 │   └── workflows/
 │       ├── ci.yml           # GitHub Actions CI workflow
 │       └── cd.yml           # GitHub Actions CD workflow
 ├── Dockerfile               # Builds and runs the container
 ├── README.md                # Project documentation
+├── package.json             # Node.js package configuration
+├── vite.config.ts           # Vite configuration file
 ```
 
 ---
@@ -70,7 +81,7 @@ This repository includes separate [GitHub Actions](https://github.com/features/a
 
 ## 🧡 Contributing
 
-We welcome contributions! If you want to expand this template or add a tagged branch:
+We welcome contributions! If you want to expand this template or add additional features:
 
 1. Fork the repository.
 2. Create a new branch with your changes.
@@ -80,12 +91,9 @@ We welcome contributions! If you want to expand this template or add a tagged br
 
 ## 🛠️ Future Plans
 
-- Tagged branches for language-specific templates:
-  - [`hellonode`](https://github.com/zpz5HAU-tgc3fgw2xwr/helloworld/tree/hellonode): Node.js/TypeScript setup with tools like [ESLint](https://eslint.org/) and [Vitest](https://vitest.dev/).
-  - [`hellopython`](https://github.com/zpz5HAU-tgc3fgw2xwr/helloworld/tree/hellopython): Python environment with linting and testing.
-  - [`hellogo`](https://github.com/zpz5HAU-tgc3fgw2xwr/helloworld/tree/hellogo): Go setup with modules and testing.
-- Sub-branches for popular frameworks and libraries:
-  - [Vue.js](https://vuejs.org/), [React](https://reactjs.org/), [Angular](https://angular.io/), [Express.js](https://expressjs.com/), and more.
+- Additional branches for specific frameworks and tools:
+  - [Vue.js](https://vuejs.org/), [React](https://reactjs.org/), [Angular](https://angular.io/), and more.
+- Enhanced support for advanced configurations and optimizations.
 
 ---
 

@@ -2,7 +2,7 @@ name: CI Pipeline
 
 on:
   pull_request:
-    branches: [main]
+    branches: [main, hellonode]
 
 jobs:
   tests:
@@ -13,8 +13,49 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Read Node.js version from .nvmrc
+        id: node_version
+        run: echo "NODE_VERSION=$(cat .nvmrc)" >> $GITHUB_ENV
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run unit tests
+        run: npm run test -- --coverage
+
       - name: Build Docker Image
         run: docker build -t helloworld .
 
       - name: Run Docker Container
         run: docker run helloworld
+
+  style:
+    name: Style and Formatting Checks
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Read Node.js version from .nvmrc
+        id: node_version
+        run: echo "NODE_VERSION=$(cat .nvmrc)" >> $GITHUB_ENV
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check formatting
+        run: npm run format:check
+
+      - name: Check linting
+        run: npm run lint -- --max-warnings=0
