@@ -4,7 +4,7 @@
 	"homepage": "https://github.com/zpz5HAU-tgc3fgw2xwr/helloworld#readme",
 	"license": "ISC",
 	"main": "eslint.config.js",
-	"name": "hellovue",
+	"name": "hellonode",
 	"type": "module",
 	"version": "0.0.1",
 	"bugs": {
