@@ -1,6 +1,6 @@
 {
 	"author": "Brennen Heinrich",
-	"description": "Minimal Node.js starter template with TypeScript, ESLint, Prettier, Vitest, and GitHub Actions CI/CD.",
+	"description": "A minimalist Vue.js starter template with TypeScript, Vite, ESLint, Prettier, and Vitest pre-configured for scalable and efficient development.",
 	"homepage": "https://github.com/zpz5HAU-tgc3fgw2xwr/helloworld#readme",
 	"license": "ISC",
 	"main": "eslint.config.js",
@@ -13,12 +13,16 @@
 	"devDependencies": {
 		"@vitejs/plugin-vue": "^5.2.1",
 		"@vitest/coverage-v8": "^3.0.2",
+		"@vue/tsconfig": "^0.7.0",
 		"eslint": "^9.18.0",
 		"eslint-plugin-security": "^3.0.1",
+		"eslint-plugin-vue": "^9.32.0",
 		"prettier": "^3.4.2",
+		"sass": "^1.83.4",
 		"typescript": "~5.6.2",
 		"vite": "^6.0.5",
-		"vitest": "^3.0.2"
+		"vitest": "^3.0.2",
+		"vue-tsc": "^2.2.0"
 	},
 	"prettier": {
 		"printWidth": 80,
@@ -32,7 +36,7 @@
 		"url": "git+https://github.com/zpz5HAU-tgc3fgw2xwr/helloworld.git"
 	},
 	"scripts": {
-		"build": "tsc && vite build",
+		"build": "vue-tsc && vite build",
 		"dev": "vite",
 		"format:check": "prettier --check \"src/**/*.{js,ts,json,css,md}\"",
 		"format:write": "prettier --write \"src/**/*.{js,ts,json,css,md}\"",

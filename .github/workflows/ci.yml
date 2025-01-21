@@ -2,11 +2,11 @@ name: CI Pipeline
 
 on:
   pull_request:
-    branches: [main, hellonode]
+    branches: [main, hellonode, hellovue]
 
 jobs:
   tests:
-    name: Test and Build
+    name: Build and Test
     runs-on: ubuntu-latest
 
     steps:
