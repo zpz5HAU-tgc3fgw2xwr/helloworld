@@ -1,11 +1,11 @@
-# 🌐 Hellonode
+# 🌐 Hellovue
 
-![CI Status](https://github.com/zpz5HAU-tgc3fgw2xwr/helloworld/actions/workflows/ci.yml/badge.svg?branch=hellonode)
-![CD Status](https://github.com/zpz5HAU-tgc3fgw2xwr/helloworld/actions/workflows/cd.yml/badge.svg?branch=hellonode)
+![CI Status](https://github.com/zpz5HAU-tgc3fgw2xwr/helloworld/actions/workflows/ci.yml?branch=hellovue)
+![CD Status](https://github.com/zpz5HAU-tgc3fgw2xwr/helloworld/actions/workflows/cd.yml?branch=hellovue)
 
 ## 🖍 Project Overview
 
-**Hellonode** is a Node.js-based project template built on the Helloworld framework. It provides a minimalist yet robust starting point with tools like TypeScript, ESLint, Vitest, and Vite pre-configured for efficient development. The structure emphasizes scalability and clarity, ensuring seamless branching and expansion.
+**Hellovue** is a Vue.js-based project template built on the Helloworld framework. It provides a minimalist yet robust starting point with tools like TypeScript, ESLint, Vitest, and Vite pre-configured for efficient development. The structure emphasizes scalability and clarity, ensuring seamless branching and expansion.
 
 ---
 
@@ -15,11 +15,11 @@
 
 1. Build the Docker image:
    ```bash
-   docker build -t hellonode .
+   docker build -t hellovue .
    ```
 2. Run the Docker container:
    ```bash
-   docker run hellonode
+   docker run hellovue
    ```
 
 ### Run Locally
@@ -38,7 +38,7 @@
 
 ## 🌟 Features
 
-- **Node.js Template**: Includes TypeScript for type safety and Vite for fast builds.
+- **Vue.js Template**: Includes TypeScript for type safety and Vite for fast builds.
 - **Cross-Platform Support**: Works seamlessly in Docker or local environments.
 - **Scalable Structure**: Organized directories for assets and components.
 - **CI/CD Ready**: Includes [GitHub Actions](https://github.com/features/actions) for automated testing and validation.
@@ -50,7 +50,7 @@
 ## 🗂️ Directory Structure
 
 ```
-hellonode/
+hellovue/
 ├── src/                     # Source files
 │   ├── assets/              # Static assets
 │   │   ├── styles/          # Stylesheets
@@ -62,7 +62,7 @@ hellonode/
 │       └── cd.yml           # GitHub Actions CD workflow
 ├── Dockerfile               # Builds and runs the container
 ├── README.md                # Project documentation
-├── package.json             # Node.js package configuration
+├── package.json             # Vue.js package configuration
 ├── vite.config.ts           # Vite configuration file
 ```
 
@@ -92,7 +92,7 @@ We welcome contributions! If you want to expand this template or add additional 
 ## 🛠️ Future Plans
 
 - Additional branches for specific frameworks and tools:
-  - [Vue.js](https://vuejs.org/), [React](https://reactjs.org/), [Angular](https://angular.io/), and more.
+  - [React](https://reactjs.org/), [Angular](https://angular.io/), and more.
 - Enhanced support for advanced configurations and optimizations.
 
 ---
