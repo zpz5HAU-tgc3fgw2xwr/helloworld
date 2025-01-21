@@ -1,27 +1,33 @@
 # Use a Node.js base image
 FROM node:21-alpine
 
-# Set the working directory inside the container
-WORKDIR /src
+# Install bash and dependencies for building Node.js
+RUN apk add --no-cache bash curl make gcc g++ python3
 
-# Copy only the files necessary for npm install first (to leverage Docker caching)
-COPY package.json package-lock.json ./
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the .nvmrc file for Node.js version management
 COPY .nvmrc ./
 
 # Install Node.js version based on .nvmrc
-RUN node -v | grep $(cat .nvmrc) || (npm install -g n && n $(cat .nvmrc))
+RUN NODE_VERSION=$(cat .nvmrc) && \
+    npm install -g n && \
+    n $NODE_VERSION && \
+    ln -sf /usr/local/n/versions/node/$NODE_VERSION/bin/node /usr/local/bin/node && \
+    ln -sf /usr/local/n/versions/node/$NODE_VERSION/bin/npm /usr/local/bin/npm
+
+# Copy project files
+COPY . .
 
 # Install dependencies
 RUN npm ci
 
-# Copy the remaining project files
-COPY . .
-
 # Build the application
 RUN npm run build
 
-# Expose the desired port (adjust if necessary)
+# Expose the desired port
 EXPOSE 3000
 
-# Start the application from the build
+# Start the application
 CMD ["node", "dist/index.js"]
