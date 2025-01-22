@@ -1,6 +1,6 @@
 {
 	"author": "Brennen Heinrich",
-	"description": "A minimalist Vue.js starter template with TypeScript, Vite, ESLint, Prettier, and Vitest pre-configured for scalable and efficient development.",
+	"description": "A Vue.js starter template enhanced with Vuetify for modern UI design, structured with TypeScript, Vite, ESLint, Prettier, and Vitest for scalable and efficient development.",
 	"homepage": "https://github.com/zpz5HAU-tgc3fgw2xwr/helloworld#readme",
 	"license": "ISC",
 	"main": "eslint.config.js",
@@ -11,18 +11,32 @@
 		"url": "https://github.com/zpz5HAU-tgc3fgw2xwr/helloworld/issues"
 	},
 	"devDependencies": {
-		"@vitejs/plugin-vue": "^5.2.1",
-		"@vitest/coverage-v8": "^3.0.2",
-		"@vue/tsconfig": "^0.7.0",
-		"eslint": "^9.18.0",
+		"@eslint/js": "^9.14.0",
+		"@tsconfig/node22": "^22.0.0",
+		"@types/node": "^22.9.0",
+		"@vitejs/plugin-vue": "^5.1.4",
+		"@vue/eslint-config-typescript": "^14.1.3",
+		"@vue/tsconfig": "^0.5.1",
+		"eslint": "^9.14.0",
 		"eslint-plugin-security": "^3.0.1",
-		"eslint-plugin-vue": "^9.32.0",
+		"eslint-plugin-vue": "^9.30.0",
+		"npm-run-all2": "^7.0.1",
+		"pinia": "^2.1.7",
+		"sass": "1.77.8",
+		"sass-embedded": "^1.77.8",
+		"typescript": "~5.6.3",
 		"prettier": "^3.4.2",
-		"sass": "^1.83.4",
-		"typescript": "~5.6.2",
-		"vite": "^6.0.5",
+		"unplugin-auto-import": "^0.17.6",
+		"unplugin-fonts": "^1.1.1",
+		"unplugin-vue-components": "^0.27.2",
+		"unplugin-vue-router": "^0.10.0",
+		"vite": "^5.4.10",
+		"vite-plugin-vue-layouts": "^0.11.0",
+		"vite-plugin-vuetify": "^2.0.3",
+		"vue-router": "^4.4.0",
+		"vue-tsc": "^2.1.10",
 		"vitest": "^3.0.2",
-		"vue-tsc": "^2.2.0"
+		"@vitest/coverage-v8": "^3.0.2"
 	},
 	"prettier": {
 		"printWidth": 80,
@@ -36,12 +50,21 @@
 		"url": "git+https://github.com/zpz5HAU-tgc3fgw2xwr/helloworld.git"
 	},
 	"scripts": {
-		"build": "vue-tsc && vite build",
 		"dev": "vite",
-		"format:check": "prettier --check \"src/**/*.{js,ts,json,css,md}\"",
-		"format:write": "prettier --write \"src/**/*.{js,ts,json,css,md}\"",
-		"lint": "eslint . --ext .ts",
+		"build": "run-p type-check \"build-only {@}\" --",
 		"preview": "vite preview",
-		"test": "vitest --run"
+		"build-only": "vite build",
+		"type-check": "vue-tsc --build --force",
+		"lint": "eslint . --fix",
+		"test": "vitest --run",
+		"format:check": "prettier --check \"src/**/*.{js,ts,json,css,md}\"",
+		"format:write": "prettier --write \"src/**/*.{js,ts,json,css,md}\""
+	},
+	"dependencies": {
+		"@mdi/font": "^7.4.47",
+		"core-js": "^3.37.1",
+		"roboto-fontface": "*",
+		"vue": "^3.4.31",
+		"vuetify": "^3.6.14"
 	}
 }
